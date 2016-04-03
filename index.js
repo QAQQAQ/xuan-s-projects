@@ -68,8 +68,11 @@ app.get('/',function(req, res){
 });
 
 //响应注册页面get请求
-// app.get('/',checkLogin.alreadyLogin);
 app.get('/register',function(req, res){
+  if(req.session.user){
+    console.log('用户已登陆！');
+    return res.redirect('/');
+  }
     console.log('注册！');
     res.render('register',{
         user: req.session.user,
@@ -135,8 +138,12 @@ app.post('/register',function(req, res){
     });
 });
 
-// app.get('/login', checkLogin.alreadyLogin);
 app.get('/login',function(req, res){
+  console.log(req.session);
+  if(req.session.user){
+    console.log('用户已登陆！');
+    return res.redirect('/');
+  }
     console.log('登录！');
     res.render('login',{
         user: req.session.user,
