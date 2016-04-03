@@ -1,0 +1,55 @@
+<%- include header %>
+<script language="javascript">
+    function checkUser(){
+        var username = $("#username").val();
+
+        if((!username.match(/^[a-zA-Z0-9_]{3,20}$/)) || (username.length <3 || username.length >20)){
+            var msg = "*用户名只能是字母、数字、下划线的组合，长度3-20个字符";
+            // alert(msg);
+            document.getElementById("s1").innerHTML = msg;
+            document.all["s1"].style.color="#ff0000";
+        }else{
+            document.getElementById("s1").innerHTML = '';
+        }
+    }
+</script>
+
+<script>
+    function checkPassword(){
+        var password = $("#password").val();
+        if((!(/[a-z]/.test(password)) || !(/[A-Z]/.test(password)) || !(/[0-9]/.test(password))) || ( password.length < 6)){
+            var msg = "*长度不能少于6,必须同时包含数字、小写字母、大写字母";
+            // alert(msg);
+            document.getElementById("ss1").innerHTML = msg;
+            document.all["ss1"].style.color="#ff0000";
+            //$("#ss").text(msg);
+        }else{
+            document.getElementById("ss1").innerHTML = '';
+            // $("#ss").text('');
+        }
+
+    }
+</script>
+
+<div class="text-center page-title">用户登录</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+            <form method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="username" name="username" maxlength="20" placeholder="用户名" onblur="checkUser()">
+                    <span id="s1"> </span>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="密码" onblur="checkPassword()">
+                    <span id="ss1" > </span>
+                </div>
+
+                <button type="submit" class="btn btn-default center-block">登录</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include footer %>
+
