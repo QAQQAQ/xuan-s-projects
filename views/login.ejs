@@ -1,4 +1,6 @@
 <%- include header %>
+<script src="/controllers/login.js"></script>
+
 <script language="javascript">
     function checkUser(){
         var username = $("#username").val();
@@ -27,29 +29,33 @@
             document.getElementById("ss1").innerHTML = '';
             // $("#ss").text('');
         }
-
     }
 </script>
 
 <div class="text-center page-title">用户登录</div>
-<div class="container">
+<div class="container" ng-controller="LoginCtrl">
     <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
             <form method="post">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="username" name="username" maxlength="20" placeholder="用户名" onblur="checkUser()">
+                    <input type="text" ng-model="username" class="form-control" id="username" name="username" maxlength="20" placeholder="用户名" onblur="checkUser()">
                     <span id="s1"> </span>
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="密码" onblur="checkPassword()">
+                    <input type="password" ng-model="password" class="form-control" id="password" name="password" placeholder="密码" onblur="checkPassword()">
                     <span id="ss1" > </span>
                 </div>
+                <div>
+                  <span class="text-danger">
+                    {{errorMsg}}
+                  </span>
+                </div>
 
-                <button type="submit" class="btn btn-default center-block">登录</button>
+                <button ng-click='login()' class="btn btn-default center-block">登录</button>
+
                 </form>
             </div>
         </div>
     </div>
 <%- include footer %>
-

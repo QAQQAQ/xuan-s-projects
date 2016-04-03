@@ -1,4 +1,6 @@
 <%- include header %>
+<script src="/controllers/register.js"></script>
+
 <script language="javascript">
     function checkUser(){
         var username = $("#username").val();
@@ -45,31 +47,31 @@
 </script>
 
 <div class="text-center page-title">新用户注册</div>
-<div class="container">
+<div class="container" ng-controller="RegisterCtrl">
     <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
             <form method="post">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="用户名"  onblur="checkUser()">
+                    <input type="text" ng-model="username" class="form-control" id="username" name="username" placeholder="用户名"  onblur="checkUser()">
                     <span id="s"> </span>
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="密码" onblur="checkPassword()">
+                    <input type="password" ng-model="password" class="form-control" id="password" name="password" placeholder="密码" onblur="checkPassword()">
                     <span id="ss" > </span>
                 </div>
 
                 <div class="form-group">
-                    <input type="password"class="form-control" id="passwordRepeat" name="passwordRepeat" placeholder="确认密码" onblur="checkRepeatPassword()">
+                    <input type="password" ng-model="passwordRepeat" class="form-control" id="passwordRepeat" name="passwordRepeat" placeholder="确认密码" onblur="checkRepeatPassword()">
                     <span id="sss"> </span>
                 </div>
-
-                <button type="submit" class="btn btn-default center-block">注册</button>
                 <div>
-                    <span style="color:red">
-                        <%= msg%>
+                    <span class="text-danger">
+                        {{errorMsg}}
                     </span>
                 </div>
+                <button ng-click="register()" class="btn btn-default center-block">注册</button>
+
                 </form>
 
             </div>

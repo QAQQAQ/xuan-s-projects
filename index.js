@@ -34,6 +34,7 @@ app.set('view engine','ejs');
 
 //定义静态文件目录
 app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'scripts')));
 
 //定义数据解析器
 app.use(bodyParser.json());
@@ -80,37 +81,36 @@ app.get('/register',function(req, res){
 //post请求
 app.post('/register',function(req, res){
     //req.body可以获取到表单的每项数据
-    var username = req.body.username,
-        password = req.body.password,
-        passwordRepeat = req.body.passwordRepeat;
-        
+    var username = req.body.username || '',
+        password = req.body.password || '',
+        passwordRepeat = req.body.passwordRepeat || '';
     //检查输入的用户名是否为空，使用trim去掉两端空格
-    if(username.trim().length == 0){
+    if(username.trim().length === 0){
         console.log('用户名不能为空！');
-        res.render('register',{msg : '用户名不能为空！'});
+        return res.send('用户名不能为空！');
     }
     //
-    if(password.trim().length == 0 || passwordRepeat.trim().length == 0){
+    if(password.trim().length === 0 || passwordRepeat.trim().length === 0){
         console.log('密码不能为空！');
-        return res.redirect('/register');
+        return res.send('密码不能为空！');
     }
 
     //检查两次输入的密码是否一致
     if(password != passwordRepeat){
         console.log('两次输入的密码不一致！');
-        return res.redirect('/register');
+        return res.send('两次输入的密码不一致！');
     }
 
     //检查用户名是否已经存在，如果不存在，则保存该条记录
     User.findOne({username:username},function(err, user){
         if(err){
             console.log(err);
-            return res.redirect('/register');
+            return res.send(err);
         }
 
         if(user){
             console.log('用户名已经存在');
-            return res.redirect('/register');
+            return res.send('用户名已经存在');
         }
 
         //对密码进行md5加密
@@ -126,7 +126,7 @@ app.post('/register',function(req, res){
         newUser.save(function(err,  doc){
             if(err){
                 console.log(err);
-                return res.redirect('/register');
+                return res.send(err);
             }
             console.log('注册成功！');
             return res.redirect('/');
@@ -143,25 +143,28 @@ app.get('/login',function(req, res){
     });
 });
 app.post('/login',function(req, res){
-    var username = req.body.username,
-        password = req.body.password;
+    var username = req.body.username || '',
+        password = req.body.password || '';
 
     User.findOne({username:username},function(err, user){
         if(err){
             console.log(err);
-            return res.redirect('/login');
+            return res.send(err);
+            // return res.redirect('/login');
         }
 
         if(!user){
             console.log('用户名不存在');
-            return res.redirect('/login');
+            return res.send('用户名不存在');
+            // return res.redirect('/login');
         }
         //对密码进行md5加密
         var md5 = crypto.createHash('md5'),
             md5password = md5.update(password).digest('hex');
         if(user.password != md5password){
             console.log('密码错误！');
-            return res.redirect('/login');
+            return res.send('密码错误！');
+            // return res.redirect('/login');
         }
         console.log('登录成功！');
         user.password = null;
@@ -169,7 +172,7 @@ app.post('/login',function(req, res){
         req.session.user = user;//为了安全起见，将密码删除
         return res.redirect('/');
     });
-})
+});
 app.get('/quit',function(req, res){
     req.session.user = null;
     console.log('退出！');
