@@ -44,7 +44,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
  app.use(session({
      secret: '1234',
      name: 'mynote',
-     cookie: {maxAge: 1000 * 60 * 20},//session保存时间20min
+     cookie: {maxAge: 1000 * 60 * 60 * 24 * 7},//session保存时间7天
      resave: false,
      saveUninitialized: true
  }));
