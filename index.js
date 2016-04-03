@@ -84,6 +84,7 @@ app.post('/register',function(req, res){
     var username = req.body.username || '',
         password = req.body.password || '',
         passwordRepeat = req.body.passwordRepeat || '';
+
     //检查输入的用户名是否为空，使用trim去掉两端空格
     if(username.trim().length === 0){
         console.log('用户名不能为空！');
@@ -128,8 +129,7 @@ app.post('/register',function(req, res){
                 console.log(err);
                 return res.send(err);
             }
-            console.log('注册成功！');
-            return res.redirect('/');
+            return res.send('success');
         });
     });
 });
@@ -170,7 +170,7 @@ app.post('/login',function(req, res){
         user.password = null;
         delete user.password;
         req.session.user = user;//为了安全起见，将密码删除
-        return res.redirect('/');
+        return res.send('success');
     });
 });
 app.get('/quit',function(req, res){

@@ -4,13 +4,18 @@ angular.module('Note')
     function($window, $scope, $http) {
       $scope.errorMsg = '';
       $scope.login = function(){
+        $scope.errorMsg = '';
         var data = {
           username : $scope.username,
           password : $scope.password
         };
         $http.post('/login',data)
           .success(function(data, status){
-            $scope.errorMsg = data;
+            if(data === 'success'){
+              $window.location.href = '/';
+            }else{
+              $scope.errorMsg = data;
+            }
           });
       };
     }

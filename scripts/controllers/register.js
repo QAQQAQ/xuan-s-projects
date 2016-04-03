@@ -5,6 +5,7 @@ angular.module('Note')
       $scope.errorMsg = '';
 
       $scope.register = function(){
+        $scope.errorMsg = '';
         var data = {
           username : $scope.username,
           password : $scope.password,
@@ -13,7 +14,11 @@ angular.module('Note')
 
         $http.post('/register', data)
           .success(function(data, status){
-            $scope.errorMsg = data;
+            if(data === 'success'){
+              $window.location.href = '/';
+            }else{
+              $scope.errorMsg = data;
+            }
           });
       };
     }
