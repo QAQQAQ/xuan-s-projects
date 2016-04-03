@@ -45,7 +45,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
      secret: '1234',
      name: 'mynote',
      cookie: {maxAge: 1000 * 60 * 60 * 24 * 7},//session保存时间7天
-     resave: false,
+     resave: true,
      saveUninitialized: true
  }));
 
@@ -64,10 +64,11 @@ app.get('/',function(req, res){
                 user: req.session.user.username,
                 notes: allNotes
             });
-        })
+        });
 });
 
 //响应注册页面get请求
+// app.get('/',checkLogin.alreadyLogin);
 app.get('/register',function(req, res){
     console.log('注册！');
     res.render('register',{
@@ -134,7 +135,7 @@ app.post('/register',function(req, res){
     });
 });
 
-
+// app.get('/login', checkLogin.alreadyLogin);
 app.get('/login',function(req, res){
     console.log('登录！');
     res.render('login',{
