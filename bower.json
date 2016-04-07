@@ -21,6 +21,7 @@
   "dependencies": {
     "angular": "^1.5.3",
     "bootstrap": "^3.3.6",
+    "animate": "https://github.com/daneden/animate.css.git#~3.4.0",
     "jquery": "^2.2.2"
   },
   "directory": "public/bower_components"
