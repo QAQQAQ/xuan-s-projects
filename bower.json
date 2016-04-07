@@ -4,7 +4,7 @@
   "authors": [
     "zhaoxuan"
   ],
-  "description": "note",
+  "description": "xuan-s-note",
   "main": "index.js",
   "moduleType": [],
   "keywords": [
@@ -21,8 +21,8 @@
   "dependencies": {
     "angular": "^1.5.3",
     "bootstrap": "^3.3.6",
-    "animate": "https://github.com/daneden/animate.css.git#~3.4.0",
-    "jquery": "^2.2.2"
+    "jquery": "^2.2.2",
+    "animate": "git://github.com/daneden/animate.css.git#~3.4.0"
   },
   "directory": "public/bower_components"
 }
