@@ -21,7 +21,7 @@ var User = models.User;
 var Note = models.Note;
 
 //使用mongoose连接服务
-mongoose.connect('mongodb://localhost:27017/notes');
+mongoose.connect('mongodb://123.206.71.158:27017/notes');
 mongoose.connection.on('error',console.error.bind(console,'连接数据库失败'));
 
 
