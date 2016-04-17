@@ -1,6 +1,29 @@
-<%- include header %>
-<div class="text-center page-title"><%= title %></div>
+<!DOCTYPE html>
+<html ng-app="Note">
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/bower_components/animate/animate.min.css">
+
+</head>
+<body  background="/images/background.jpg" style="background-repeat:no-repeat">
+
+<div class="clearfix page-nav">
+
+    <% if(user){ %>
+    <div class="pull-left nav-username text-primary">欢迎你,<%= user.username %>！</div>
+    <div class="pull-left"><a href="/post">发表</a></div>
+    <div class="pull-right nav-quit"><a href="/quit">退出</a></div>
+    <% }else{ %>
+    <div class="pull-right nav-register"><a href="/register">注册</a></div>
+    <div class="pull-right nav-login"><a href="/login">登录</a></div>
+    <% } %>
+</div>
 <div class="container animated bounce">
+<div class="text-center page-title"><%= title %></div>
+
     <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
             <div class="article-box">

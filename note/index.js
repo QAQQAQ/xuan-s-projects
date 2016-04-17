@@ -67,6 +67,12 @@ app.get('/',function(req, res){
         });
 });
 
+//intro page
+app.get('/introPage',function(req, res){
+    console.log('introPage！');
+    res.render('intro.ejs');
+});
+
 //响应注册页面get请求
 app.get('/register',function(req, res){
   if(req.session.user){
