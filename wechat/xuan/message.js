@@ -1,10 +1,6 @@
 /**
  * Created by lenovo on 2016/4/18.
  */
-/**
- * Created by lenovo on 2016/4/17.
- */
-
 var PORT=8070;
 var http = require('http');
 var qs = require('qs');
