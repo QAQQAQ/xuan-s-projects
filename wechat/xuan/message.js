@@ -6,6 +6,10 @@ var http = require('http');
 var qs = require('qs');
 var TOKEN='millie';
 
+var weixin = require('weixin-api');
+var express = require('express');
+var app = express();
+
 function checkSignature(params,token){
     var key=[token,params.timestamp,params.nonce].sort().join('');
     var sha1 = require('crypto').createHash('sha1');
@@ -35,13 +39,39 @@ var server = http.createServer(function(request,response){
         });
         //获取到了POST数据
         request.addListener("end",function(){
-            var parseString = require('xml2js').parseString;
-
+         var parseString = require('xml2js').parseString;
             parseString(postdata, function (err, result) {
+                var resMsg = {};
                 if(!err){
                     console.log(result);
                     response.end('success');
-                }
+                    switch(postdata.xml.MsgType){
+                        case "text":
+                                    resMsg = {
+                                        fromUserName : postdata.xml.ToUserName,
+                                        toUserName :postdata.xml.FromUserName,
+                                        msgType : "text",
+                                        content : "这是文本回复",
+                                        funcFlag : 0
+                                    };
+                            break;
+                        case "image":
+                            resMsg = {
+                                fromUserName : postdata.xml.ToUserName,
+                                toUserName :postdata.xml.FromUserName,
+                                msgType : "image",
+                                content : "这是图片回复",
+                                funcFlag : 0
+                            };
+                            break;
+
+
+
+
+                        }
+                    }
+
+
             });
             //console.log(postdata);
             // response.end('success');
