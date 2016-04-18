@@ -17,7 +17,8 @@ function checkSignature(params,token){
 var server = http.createServer(function(request,response){
     var query = require('url').parse(request.url).query;
     var params = qs.parse(query);
-
+    console.log(params);
+    console.log("token-->",TOKEN);
     if(!checkSignature(params,TOKEN)){
         //如果签名不对，结束请求并返回
         response.end('signature fail');
@@ -37,8 +38,7 @@ var server = http.createServer(function(request,response){
             response.end('success');
         });
     }
-    console.log(params);
-    console.log("token-->",TOKEN);
+
 });
 
 server.listen(PORT);
