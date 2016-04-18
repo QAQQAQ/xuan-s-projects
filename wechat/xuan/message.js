@@ -1,14 +1,14 @@
 /**
  * Created by lenovo on 2016/4/18.
  */
+/**
+ * Created by lenovo on 2016/4/17.
+ */
+
 var PORT=8070;
 var http = require('http');
 var qs = require('qs');
 var TOKEN='millie';
-
-var weixin = require('weixin-api');
-var express = require('express');
-var app = express();
 
 function checkSignature(params,token){
     var key=[token,params.timestamp,params.nonce].sort().join('');
@@ -39,12 +39,10 @@ var server = http.createServer(function(request,response){
         });
         //获取到了POST数据
         request.addListener("end",function(){
-
             var parseString = require('xml2js').parseString;
+
             parseString(postdata, function (err, result) {
                 if(!err){
-                    var res = replyText(result, '消息推送成功！');
-                    response.end(res);
                     console.log(result);
                     response.end('success');
                 }
