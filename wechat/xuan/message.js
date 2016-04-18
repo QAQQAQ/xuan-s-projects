@@ -17,25 +17,35 @@ function checkSignature(params,token){
 var server = http.createServer(function(request,response){
     var query = require('url').parse(request.url).query;
     var params = qs.parse(query);
-    console.log(params);
-    console.log("token-->",TOKEN);
+    //console.log(params);
+   // console.log("token-->",TOKEN);
+    //如果签名不对，结束请求并返回
     if(!checkSignature(params,TOKEN)){
-        //���ǩ�����ԣ��������󲢷���
         response.end('signature fail');
         return;
     }
 
     if(request.method == "GET"){
+        //如果请求是GET，返回echostr用于通过服务器有效校验
         response.end(params.echostr);
     }else{
+        //否则是微信给开发者服务器的POST请求
         var postdata = "";
         request.addListener("data", function (postchunk) {
             postdata += postchunk;
         });
-
+            //获取到了POST数据
             request.addListener("end",function(){
-            console.log(postdata);
-            response.end('success');
+                var parseString = require('xml2js').parseString;
+
+                parseString(postdata, function (err, result) {
+                    if(!err){
+                        console.log(result);
+                        response.end('success');
+                    }
+                });
+            //console.log(postdata);
+           // response.end('success');
         });
     }
 
