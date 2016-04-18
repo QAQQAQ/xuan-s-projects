@@ -28,11 +28,11 @@ var server = http.createServer(function(request,response){
         response.end(params.echostr);
     }else{
         var postdata = "";
-        request.addEventListener("data", function (postchunk) {
+        request.addListener("data", function (postchunk) {
             postdata += postchunk;
         });
 
-        request.addEventListener("end",function(){
+            request.addListener("end",function(){
             console.log(postdata);
             response.end('success');
         });
