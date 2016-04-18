@@ -37,6 +37,8 @@ var server = http.createServer(function(request,response){
             response.end('success');
         });
     }
+    console.log(params);
+    console.log("token-->",TOKEN);
 });
 
 server.listen(PORT);
