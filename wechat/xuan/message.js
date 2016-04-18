@@ -1,4 +1,7 @@
 /**
+ * Created by lenovo on 2016/4/18.
+ */
+/**
  * Created by lenovo on 2016/4/17.
  */
 
@@ -18,7 +21,7 @@ var server = http.createServer(function(request,response){
     var query = require('url').parse(request.url).query;
     var params = qs.parse(query);
     //console.log(params);
-   // console.log("token-->",TOKEN);
+    // console.log("token-->",TOKEN);
     //如果签名不对，结束请求并返回
     if(!checkSignature(params,TOKEN)){
         response.end('signature fail');
@@ -34,18 +37,18 @@ var server = http.createServer(function(request,response){
         request.addListener("data", function (postchunk) {
             postdata += postchunk;
         });
-            //获取到了POST数据
-            request.addListener("end",function(){
-                var parseString = require('xml2js').parseString;
+        //获取到了POST数据
+        request.addListener("end",function(){
+            var parseString = require('xml2js').parseString;
 
-                parseString(postdata, function (err, result) {
-                    if(!err){
-                        console.log(result);
-                        response.end('success');
-                    }
-                });
+            parseString(postdata, function (err, result) {
+                if(!err){
+                    console.log(result);
+                    response.end('success');
+                }
+            });
             //console.log(postdata);
-           // response.end('success');
+            // response.end('success');
         });
     }
 
