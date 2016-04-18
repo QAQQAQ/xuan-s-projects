@@ -15,7 +15,7 @@ function checkSignature(params,token){
 }
 
 var server = http.createServer(function(request,response){
-    var query = require('url').parse(req.url).query;
+    var query = require('url').parse(request.url).query;
     var params = qs.parse(query);
 
     if(!checkSignature(params,TOKEN)){
