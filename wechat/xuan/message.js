@@ -40,11 +40,28 @@ var server = http.createServer(function(request,response){
         //获取到了POST数据
         request.addListener("end",function(){
             var parseString = require('xml2js').parseString;
-
+            console.log(JSON.stringify(postdata));
+            var resMsg = '';
             parseString(postdata, function (err, result) {
                 if(!err){
+                    switch(postdata.xml.MsgType){
+                    case '[text]':
+                      resMsg = '<xml>'+
+                                  '<ToUserName><![CDATA[toUser]]></ToUserName>'+
+                                  '<FromUserName><![CDATA[fromUser]]></FromUserName>'+
+                                  '<CreateTime>12345678</CreateTime>'+
+                                  '<MsgType><![CDATA[text]]></MsgType>'+
+                                  '<Content><![CDATA[你好]]></Content>'+
+                                '</xml>';
+                      break;
+                    default:
+                    }
+                    response.set({
+                      'Content-Type': 'text/xml',
+                    });
+                    response.end(resMsg);
+                    // response.end('success');
                     console.log(result);
-                    response.end('success');
                 }
             });
             //console.log(postdata);
