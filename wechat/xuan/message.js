@@ -40,12 +40,15 @@ var server = http.createServer(function(request,response){
         //获取到了POST数据
         request.addListener("end",function(){
             var parseString = require('xml2js').parseString;
-            console.log(JSON.stringify(postdata));
             var resMsg = '';
             parseString(postdata, function (err, result) {
                 if(!err){
-                    switch(postdata.xml.MsgType){
-                    case '[text]':
+		    console.log(postdata);
+		    console.log(result.xml.MsgType);
+		    var type = result.xml.MsgType.toString();
+		    console.log(type);
+                    switch(type){
+                    case "text":
                       resMsg = '<xml>'+
                                   '<ToUserName><![CDATA[toUser]]></ToUserName>'+
                                   '<FromUserName><![CDATA[fromUser]]></FromUserName>'+
@@ -55,10 +58,12 @@ var server = http.createServer(function(request,response){
                                 '</xml>';
                       break;
                     default:
-                    }
-                    response.set({
-                      'Content-Type': 'text/xml',
-                    });
+                    }	
+		    response.setHeader('Content-Type', 'text/xml');
+                   // response.set({
+                   //   'Content-Type': 'text/xml',
+                   // });
+		    console.log('resMsg',resMsg);
                     response.end(resMsg);
                     // response.end('success');
                     console.log(result);
