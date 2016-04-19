@@ -52,8 +52,8 @@ var server = http.createServer(function(request, response) {
           switch (type) {
             case "text":
               resMsg = '<xml>' +
-                '<ToUserName><![CDATA[' + result.xml.fromUser.toString() + ']]></ToUserName>' +
-                '<FromUserName><![CDATA[' + result.xml.toUser.toString() + ']]></FromUserName>' +
+                '<ToUserName><![CDATA[' + result.xml.FromUserName.toString() + ']]></ToUserName>' +
+                '<FromUserName><![CDATA[' + result.xml.ToUserName.toString() + ']]></FromUserName>' +
                 '<CreateTime>' + currentDate + '</CreateTime>' +
                 '<MsgType><![CDATA[text]]></MsgType>' +
                 '<Content><![CDATA[你好]]></Content>' +
