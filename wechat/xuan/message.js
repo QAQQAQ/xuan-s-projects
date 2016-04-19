@@ -45,7 +45,7 @@ var server = http.createServer(function(request, response) {
         if (!err) {
           console.log(result.xml.MsgType);
           var reqType = result.xml.MsgType.toString();
-          var reqContent = result.xml.Content.toString();
+          var reqContent = result.xml.Content && result.xml.Content.toString();
           var currentDate = new Date();
           console.log(reqType);
           switch (reqType) {
