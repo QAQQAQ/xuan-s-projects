@@ -40,27 +40,56 @@ var server = http.createServer(function(request, response) {
     //获取到了POST数据
     request.addListener("end", function() {
       var parseString = require('xml2js').parseString;
-      var resMsg = '';
+      var content = '';
       parseString(postdata, function(err, result) {
         if (!err) {
-          console.log(postdata);
-          console.log(result);
           console.log(result.xml.MsgType);
-          var type = result.xml.MsgType.toString();
+          var reqType = result.xml.MsgType.toString();
+          var reqContent = result.xml.Content.toString();
           var currentDate = new Date();
-          console.log(type);
-          switch (type) {
+          console.log(reqType);
+          switch (reqType) {
             case "text":
-              resMsg = '<xml>' +
-                '<ToUserName><![CDATA[' + result.xml.FromUserName.toString() + ']]></ToUserName>' +
-                '<FromUserName><![CDATA[' + result.xml.ToUserName.toString() + ']]></FromUserName>' +
-                '<CreateTime>' + currentDate + '</CreateTime>' +
-                '<MsgType><![CDATA[text]]></MsgType>' +
-                '<Content><![CDATA[你好]]></Content>' +
-                '</xml>';
+              content = '这是文本消息。';
+              break;
+            case "image":
+              content = '这是图片消息。';
+              break;
+            case "voice":
+              content = '这是语音消息。';
+              break;
+            case "video":
+              content = '这是视频消息。';
+              break;
+            case "shortvideo":
+              content = '这是小视频消息。';
+              break;
+            case "location":
+              content = '这是地理位置消息。';
+              break;
+            case "link":
+              content = '这是链接消息。';
               break;
             default:
+              break;
           }
+          switch (reqContent) {
+            case "赵烜":
+              content = '赵烜是小火山！';
+              break;
+            case "张浩":
+              content = '张浩是小火炉！';
+              break;
+            default:
+              break;
+          }
+          resMsg = '<xml>' +
+            '<ToUserName><![CDATA[' + result.xml.FromUserName.toString() + ']]></ToUserName>' +
+            '<FromUserName><![CDATA[' + result.xml.ToUserName.toString() + ']]></FromUserName>' +
+            '<CreateTime>' + currentDate + '</CreateTime>' +
+            '<MsgType><![CDATA[text]]></MsgType>' +
+            '<Content><![CDATA['+content+']]></Content>' +
+            '</xml>';
           console.log('resMsg', resMsg);
           response.setHeader('Content-Type', 'text/xml');
           response.end(resMsg);
