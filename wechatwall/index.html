@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>微信墙</title>
+	<style type="text/css">
+		.item{
+			-webkit-box-shadow:0 0 10px rgba(0, 204, 204, .5);  
+  			-moz-box-shadow:0 0 10px rgba(0, 204, 204, .5);  
+  			box-shadow:0 0 10px rgba(0, 204, 204, .5);  
+		}
+		.imgHead{
+			width: 50px;
+			height: 50px;
+			margin: auto 10px;
+		}
+		.center{
+			text-align: center;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="alert alert-info item center" role='alert'>
+				微信墙
+			</div>
+		</div>
+	</div>
+		
+
+	<script type="text/javascript">
+	/*
+	user:信息
+	city: "临沂"
+	country: "中国"
+	groupid: 0
+	headimgurl: "http://wx.qlogo.cn/mmopen/CzQvbKy0KpBagYibKjkNwrJibBEZvia8dZSOpnQUEKT0MoQTZCS7al5M1IKYQ0hOEskNbib3zBVt1wTPjkmn0zWQREAJrbywXUKic/0"
+	language: "zh_CN"
+	nickname: "远航"
+	openid: "oaGoLv6j3AwC1OcW-_YfS-_Ro-bg"
+	province: "山东"
+	remark: ""
+	sex: 1
+	subscribe: 1
+	subscribe_time: 1456276779
+	xml内容信息
+	Content: Array[1]
+	CreateTime: Array[1]
+	FromUserName: Array[1]
+	MsgId: Array[1]
+	MsgType: Array[1]
+	ToUserName: Array[1]
+	*/
+		var ws = new WebSocket('ws://123.206.71.158:8071/');
+		ws.onopen = function(){
+		   console.log("connect is ok");
+		}
+		ws.onmessage = function(e){
+
+			var json=JSON.parse(e.data);
+			var user=json.user;
+			var xml=json.xml;
+		    var div = $("<div class='alert alert-info item' role='alert'><img class='imgHead' src='"+user.headimgurl+"'/>"+xml.Content[0]+ "</div>");
+		  	$('.row').append(div);
+		}
+		ws.onsubmit = function(){
+		   ws.send("");
+		   return false;
+		}
+	</script>
+	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	
+</body>
+</html>
