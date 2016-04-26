@@ -1,0 +1,59 @@
+
+Running node-supervisor with
+  program 'message.js'
+  --watch '.'
+  --extensions 'node,js'
+  --exec 'node'
+
+Starting child process with 'node message.js'
+Watching directory '/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechat/xuan' for changes.
+Press rs for restarting the process.
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+Server running at port 8070.
+[ 'text' ]
+text
+resMsg <xml><ToUserName><![CDATA[oYAn8snjZW9Ix7uohvOZis3fvKyc]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 17:35:32 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[张浩是小火炉！]]></Content></xml>
+[ 'text' ]
+text
+resMsg <xml><ToUserName><![CDATA[oYAn8snjZW9Ix7uohvOZis3fvKyc]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 17:36:59 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[赵烜是小火山！]]></Content></xml>
+[ 'text' ]
+text
+resMsg <xml><ToUserName><![CDATA[oYAn8ssLwN1Rl5IdTw3ItxMqSaTE]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 20:22:15 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[这是文本消息。]]></Content></xml>
+[ 'text' ]
+text
+resMsg <xml><ToUserName><![CDATA[oYAn8snjZW9Ix7uohvOZis3fvKyc]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 21:27:32 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[张浩是小火炉！]]></Content></xml>
+[ 'text' ]
+text
+resMsg <xml><ToUserName><![CDATA[oYAn8snjZW9Ix7uohvOZis3fvKyc]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 21:27:38 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[赵烜是小火山！]]></Content></xml>
+[ 'text' ]
+text
+resMsg <xml><ToUserName><![CDATA[oYAn8ssLwN1Rl5IdTw3ItxMqSaTE]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 21:41:17 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[这是文本消息。]]></Content></xml>
+[ 'text' ]
+text
+resMsg <xml><ToUserName><![CDATA[oYAn8ssLwN1Rl5IdTw3ItxMqSaTE]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 21:41:19 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[这是文本消息。]]></Content></xml>
+[ 'image' ]
+image
+resMsg <xml><ToUserName><![CDATA[oYAn8ssLwN1Rl5IdTw3ItxMqSaTE]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 21:41:28 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[这是图片消息。]]></Content></xml>
+[ 'voice' ]
+voice
+resMsg <xml><ToUserName><![CDATA[oYAn8ssLwN1Rl5IdTw3ItxMqSaTE]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 21:41:35 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[这是语音消息。]]></Content></xml>
+[ 'location' ]
+location
+resMsg <xml><ToUserName><![CDATA[oYAn8ssLwN1Rl5IdTw3ItxMqSaTE]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 21:41:39 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[这是地理位置消息。]]></Content></xml>
+[ 'text' ]
+text
+resMsg <xml><ToUserName><![CDATA[oYAn8ssLwN1Rl5IdTw3ItxMqSaTE]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 21:42:05 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[这是文本消息。]]></Content></xml>
+[ 'shortvideo' ]
+shortvideo
+resMsg <xml><ToUserName><![CDATA[oYAn8ssLwN1Rl5IdTw3ItxMqSaTE]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 19 2016 21:42:34 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[这是小视频消息。]]></Content></xml>
+[ 'text' ]
+text
+resMsg <xml><ToUserName><![CDATA[oYAn8ssLwN1Rl5IdTw3ItxMqSaTE]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 26 2016 09:12:55 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[这是文本消息。]]></Content></xml>
+[ 'text' ]
+text
+resMsg <xml><ToUserName><![CDATA[oYAn8ssLwN1Rl5IdTw3ItxMqSaTE]]></ToUserName><FromUserName><![CDATA[gh_5f78fead4c9c]]></FromUserName><CreateTime>Tue Apr 26 2016 09:12:58 GMT+0800 (CST)</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[这是文本消息。]]></Content></xml>

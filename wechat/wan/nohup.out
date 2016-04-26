@@ -1,0 +1,30 @@
+
+Running node-supervisor with
+  program 'verify.js'
+  --watch '.'
+  --extensions 'node,js'
+  --exec 'node'
+
+Starting child process with 'node verify.js'
+Watching directory '/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechat/wan' for changes.
+Press rs for restarting the process.
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+Server running at port8090.
+{ id: '260714', r: '0.7004146659590602' }
+token--> wmytoken
+/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechat/wan/verify.js:14
+    System.out.println("params"+sha1.digest('hex'));
+    ^
+
+ReferenceError: System is not defined
+    at checkSignature (/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechat/wan/verify.js:14:5)
+    at Server.<anonymous> (/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechat/wan/verify.js:25:8)
+    at emitTwo (events.js:87:13)
+    at Server.emit (events.js:172:7)
+    at HTTPParser.parserOnIncoming [as onIncoming] (_http_server.js:528:12)
+    at HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)
