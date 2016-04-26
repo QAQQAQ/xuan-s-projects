@@ -120,5 +120,3 @@ function getContentTypeByExt(ext) {
     else
         return 'text/plain';
 }
-
-httpserver.js
