@@ -101,7 +101,7 @@ function shortvideoMessage(result,response){
               result.user = userInfo;
               //将消息通过websocket广播
               wss.broadcast(result);
-              var res = replyText(result, '你这是小视频消息！');
+              var res = replyText(result, '这是小视频消息！');
               response.end(res);
             });
 }
