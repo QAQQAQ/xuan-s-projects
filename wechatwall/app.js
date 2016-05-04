@@ -120,7 +120,8 @@ function getContentTypeByExt(ext) {
     else
         return 'text/plain';
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 0fc7d87aa487136ccc03be2471ccce2bc37c0801
+//<<<<<<< HEAD
+//
+//=======
+//>>>>>>> 0fc7d87aa487136ccc03be2471ccce2bc37c0801

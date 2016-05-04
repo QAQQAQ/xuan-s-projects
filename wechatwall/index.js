@@ -67,7 +67,7 @@ function textMessage(result,response){
               result.user = userInfo;
               //将消息通过websocket广播
               wss.broadcast(result);
-              var res = replyText(result, '这是文本消息！');
+              var res = replyText(result, '这是一个文本消息。');
               response.end(res);
             });
 }
@@ -79,7 +79,7 @@ function imageMessage(result,response){
               result.user = userInfo;
               //将消息通过websocket广播
               wss.broadcast(result);
-              var res = replyText(result, '这是图片消息！');
+              var res = replyText(result, '这是一个图片消息。');
               response.end(res);
             });
 }
@@ -90,7 +90,7 @@ function voiceMessage(result,response){
               result.user = userInfo;
               //将消息通过websocket广播
               wss.broadcast(result);
-              var res = replyText(result, '这是语言消息！');
+              var res = replyText(result, '这是一个语言消息。');
               response.end(res);
             });
 }
@@ -101,7 +101,7 @@ function shortvideoMessage(result,response){
               result.user = userInfo;
               //将消息通过websocket广播
               wss.broadcast(result);
-              var res = replyText(result, '这是小视频消息！');
+              var res = replyText(result, '这是一个小视频消息。');
               response.end(res);
             });
 }
@@ -114,7 +114,7 @@ function locationMessage(result,response){
               //将消息通过websocket广播
               wss.broadcast(result);
 
-              var res = replyText(result, '这是位置消息！');
+              var res = replyText(result, '这是一个位置消息。');
               response.end(res);
             });
 }
@@ -125,7 +125,7 @@ function linkMessage(result,response){
               result.user = userInfo;
               //将消息通过websocket广播
               wss.broadcast(result);
-              var res = replyText(result, '这是链接消息！');
+              var res = replyText(result, '这是一个链接消息。');
               response.end(res);
             });
 }
