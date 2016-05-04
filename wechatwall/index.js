@@ -60,6 +60,36 @@ function messageType(result,response){
 		case 'link':linkMessage(result,response); break;
 	}
 }
+function messageContent(result,response){
+    switch(result.xml.MsgContent[0]){
+        case '赵烜':zhaoxuanMessage(result,response); break;
+        case '张浩':zhanghaoMessage(result,response); break;
+
+    }
+}
+function zhaoxuanMessage(result,response){
+    getUserInfo(result.xml.FromUserName[0])
+        .then(function(userInfo){
+            //获得用户信息，合并到消息中
+            result.user = userInfo;
+            //将消息通过websocket广播
+            wss.broadcast(result);
+            var res = replyText(result, '赵烜是小火山。');
+            response.end(res);
+        });
+}
+
+function zhanghaoMessage(result,response){
+    getUserInfo(result.xml.FromUserName[0])
+        .then(function(userInfo){
+            //获得用户信息，合并到消息中
+            result.user = userInfo;
+            //将消息通过websocket广播
+            wss.broadcast(result);
+            var res = replyText(result, '张浩是小火炉。');
+            response.end(res);
+        });
+}
 function textMessage(result,response){
   getUserInfo(result.xml.FromUserName[0])
             .then(function(userInfo){
