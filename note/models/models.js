@@ -12,6 +12,15 @@ var userSchema = new Schema({
     }
 });
 
+
+/*create table user(
+ username VARCHAR(100) NOT NULL,
+ password VARCHAR(100) NOT NULL,
+ passwordRepeat VARCHAR(100) NOT NULL,
+ createTime DATE,
+ PRIMARY KEY ( username )
+ );*/
+
 var noteSchema = new Schema({
     title: String,
     author: String,
@@ -22,6 +31,13 @@ var noteSchema = new Schema({
         default: Date.now
     }
 });
-
+/*create table note(
+ title VARCHAR(100) NOT NULL,
+ author VARCHAR(100) NOT NULL,
+ tag VARCHAR(100) NOT NULL,
+ content TEXT NOT NULL,
+ createTime DATE,
+ PRIMARY KEY ( title, author )
+ );*/
 exports.Note = mongoose.model('Note',noteSchema);
 exports.User = mongoose.model('User',userSchema);
