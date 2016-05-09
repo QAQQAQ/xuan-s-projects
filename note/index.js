@@ -11,18 +11,28 @@ var session = require('express-session');
 var moment = require("moment");
 var checkLogin = require('./checkLogin.js');
 
-//引入mongoose
-var mongoose = require('mongoose');
+////引入mongoose
+//var mongoose = require('mongoose');
+//
+////引入模型
+//var models = require('./models/models');
+//
+//var User = models.User;
+//var Note = models.Note;
+//
+////使用mongoose连接服务
+//mongoose.connect('mongodb://123.206.71.158:27017/notes');
+//mongoose.connection.on('error',console.error.bind(console,'连接数据库失败'));
 
-//引入模型
-var models = require('./models/models');
-
-var User = models.User;
-var Note = models.Note;
-
-//使用mongoose连接服务
-mongoose.connect('mongodb://123.206.71.158:27017/notes');
-mongoose.connection.on('error',console.error.bind(console,'连接数据库失败'));
+//mysql
+var mysql = require('mysql');
+var pool = mysql.createPool({
+    connectionLimit: 10,
+    host: 'localhost',
+    user: 'mynote',
+    password: '123456',
+    database: 'mynote'
+});
 
 
 //创建express实例
@@ -53,18 +63,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //响应首页get请求
 app.get('/',checkLogin.noLogin);
 app.get('/',function(req, res){
-    Note.find({author: req.session.user.username})
-        .exec(function(err, allNotes){
+    console.log(req.session.user);
+    pool.getConnection(function (err, connection) {
+        if (err) throw err;
+        var query = connection.query('SELECT * FROM note WHERE author=?', req.session.user.username, function (err, allNotes) {
             if(err){
                 console.log(err);
                 return res.redirect('/');
+                throw err;
             }
+            console.log('return', allNotes);
             res.render('index',{
                 title: '首页',
                 user: req.session.user,
                 notes: allNotes
             });
+            connection.release();
         });
+        console.log(query.sql);
+    });
 });
 
 //intro page
@@ -87,7 +104,16 @@ app.get('/register',function(req, res){
         msg: ''
     });
 });
-
+pool.getConnection(function (err, connection) {
+    if (err) throw err;
+    var value = 'jia';
+    var query = connection.query('SELECT * FROM user WHERE username=?', value, function (err, ret) {
+        if (err) throw err;
+        console.log(ret);
+        connection.release();
+    });
+    console.log(query.sql);
+});
 //post请求
 app.post('/register',function(req, res){
     //req.body可以获取到表单的每项数据
@@ -111,36 +137,33 @@ app.post('/register',function(req, res){
         console.log('两次输入的密码不一致！');
         return res.send('两次输入的密码不一致！');
     }
+    pool.getConnection(function (err, connection) {
+        if (err) throw err;
+        var value = username;
+        var query = connection.query('SELECT * FROM user WHERE username=?', value, function (err, user) {
+            if (err) throw err;
+                console.log('return',user);
+                if(user.length){
+                    console.log('用户名已经存在');
+                    return res.send('用户名已经存在');
+                }
 
-    //检查用户名是否已经存在，如果不存在，则保存该条记录
-    User.findOne({username:username},function(err, user){
-        if(err){
-            console.log(err);
-            return res.send(err);
-        }
-
-        if(user){
-            console.log('用户名已经存在');
-            return res.send('用户名已经存在');
-        }
-
-        //对密码进行md5加密
-        var md5 = crypto.createHash('md5'),
-            md5password = md5.update(password).digest('hex');
-
-        //新建user对象用于保存数据
-        var newUser = new User({
-            username: username,
-            password: md5password
+                //对密码进行md5加密
+                var md5 = crypto.createHash('md5'),
+                    md5password = md5.update(password).digest('hex');
+            connection.query( 'INSERT INTO user(username, password) values(?, ? )', [username, md5password], function (err, user) {
+                if(err){
+                    console.log(err);
+                    return res.send(err);
+                }
+                console.log(user);
+                req.session.user = user[0];
+                return res.send('success');
+            });
+            console.log(user);
+            connection.release();
         });
-
-        newUser.save(function(err,  doc){
-            if(err){
-                console.log(err);
-                return res.send(err);
-            }
-            return res.send('success');
-        });
+        console.log(query.sql);
     });
 });
 
@@ -160,31 +183,30 @@ app.post('/login',function(req, res){
     var username = req.body.username || '',
         password = req.body.password || '';
 
-    User.findOne({username:username},function(err, user){
-        if(err){
-            console.log(err);
-            return res.send(err);
-            // return res.redirect('/login');
-        }
+    pool.getConnection(function (err, connection) {
+        if (err) throw err;
+        var value = username;
+        var query = connection.query('SELECT * FROM user WHERE username=?', value, function (err, user) {
+            if (err) throw err;
 
-        if(!user){
-            console.log('用户名不存在');
-            return res.send('用户名不存在');
-            // return res.redirect('/login');
-        }
-        //对密码进行md5加密
-        var md5 = crypto.createHash('md5'),
-            md5password = md5.update(password).digest('hex');
-        if(user.password != md5password){
-            console.log('密码错误！');
-            return res.send('密码错误！');
-            // return res.redirect('/login');
-        }
-        console.log('登录成功！');
-        user.password = null;
-        delete user.password;
-        req.session.user = user;//为了安全起见，将密码删除
-        return res.send('success');
+            console.log('return',user);
+
+            //对密码进行md5加密
+            var md5 = crypto.createHash('md5'),
+                md5password = md5.update(password).digest('hex');
+            if(user[0].password != md5password){
+                console.log('密码错误！');
+                return res.send('密码错误！');
+                // return res.redirect('/login');
+            }
+            console.log('登录成功！');
+            user[0].password = null;
+            delete user[0].password;
+            req.session.user = user[0];//为了安全起见，将密码删除
+            return res.send('success');
+            connection.release();
+        });
+        console.log(query.sql);
     });
 });
 app.get('/quit',function(req, res){
@@ -202,20 +224,29 @@ app.get('/post',function(req, res){
 });
 
 app.post('/post',function(req, res){
-    var note = new Note({
-        title: req.body.title,
-        author: req.session.user.username,
-        tag: req.body.tag,
-        content: req.body.content
-    });
+    console.log('session', req.session);
+    var currentTime = new Date();
+    var note = [
+        req.body.title,
+        req.session.user.username,
+        req.body.tag,
+        req.body.content,
+        currentTime];
+    console.log(currentTime);
 
-    note.save(function(err, doc){
-        if(err){
-            console.log(err);
-            return res.redirect('/post');
-        }
-        console.log('文章发表成功！');
-        return res.redirect('/');
+
+    pool.getConnection(function (err, connection) {
+        if (err) throw err;
+        var query = connection.query('insert into note(title,author,tag,content,createTime) values(?, ?, ?, ?, ?)', note, function (err, allNotes) {
+            if(err){
+                console.log(err);
+                return res.redirect('/post');
+            }
+            console.log('文章发表成功！');
+            return res.redirect('/');
+            connection.release();
+        });
+        console.log(query.sql);
     });
 });
 
@@ -228,22 +259,27 @@ app.get('/detail/',function(req, res){
 });
 
 app.get('/detail/:_id',function(req, res){
-    console.log('查看笔记！');
-    Note.findOne({_id: req.params._id})
-        .exec(function(err, art){
+    console.log('查看笔记!！', req.params._id);
+    pool.getConnection(function (err, connection) {
+        if (err) throw err;
+        var query = connection.query('select * from note where id = ?', req.params._id, function (err, art) {
             if(err){
                 console.log(err);
                 return res.redirect('/');
             }
-            if(art){
+            console.log('artcdfcscsdcsdc', art);
+            if(art.length){
                 res.render('detail',{
                     title: '笔记详情',
                     user: req.session.user,
-                    art: art,
+                    art: art[0],
                     moment:moment
                 });
             }
+            connection.release();
         });
+        console.log(query.sql);
+    });
 });
 //监听3000端口
 app.listen(3000,function(req, res){
