@@ -28,7 +28,7 @@ var checkLogin = require('./checkLogin.js');
 var mysql = require('mysql');
 var pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'localhost',
+    host: '123.206.71.158',
     user: 'mynote',
     password: '123456',
     database: 'mynote'
@@ -70,7 +70,6 @@ app.get('/',function(req, res){
             if(err){
                 console.log(err);
                 return res.redirect('/');
-                throw err;
             }
             console.log('return', allNotes);
             res.render('index',{
@@ -103,16 +102,6 @@ app.get('/register',function(req, res){
         err: '',
         msg: ''
     });
-});
-pool.getConnection(function (err, connection) {
-    if (err) throw err;
-    var value = 'jia';
-    var query = connection.query('SELECT * FROM user WHERE username=?', value, function (err, ret) {
-        if (err) throw err;
-        console.log(ret);
-        connection.release();
-    });
-    console.log(query.sql);
 });
 //post请求
 app.post('/register',function(req, res){
@@ -151,13 +140,17 @@ app.post('/register',function(req, res){
                 //对密码进行md5加密
                 var md5 = crypto.createHash('md5'),
                     md5password = md5.update(password).digest('hex');
-            connection.query( 'INSERT INTO user(username, password) values(?, ? )', [username, md5password], function (err, user) {
+                var currentTime = moment().format('YYYY-MM-DD HH:mm:ss');
+            connection.query( 'INSERT INTO user(username, password, createTime) values(?, ? , ?)', [username, md5password, currentTime], function (err, newUser) {
                 if(err){
                     console.log(err);
                     return res.send(err);
                 }
-                console.log(user);
-                req.session.user = user[0];
+
+                console.log('newUser', newUser);
+                req.session.user = {
+                  username : username
+                };
                 return res.send('success');
             });
             console.log(user);
@@ -203,8 +196,8 @@ app.post('/login',function(req, res){
             user[0].password = null;
             delete user[0].password;
             req.session.user = user[0];//为了安全起见，将密码删除
-            return res.send('success');
             connection.release();
+            return res.send('success');
         });
         console.log(query.sql);
     });
@@ -220,12 +213,12 @@ app.get('/post',function(req, res){
     res.render('post',{
         user: req.session.user,
         title: '发布'
-    })
+    });
 });
 
 app.post('/post',function(req, res){
     console.log('session', req.session);
-    var currentTime = new Date();
+    var currentTime = moment().format('YYYY-MM-DD HH:mm:ss');
     var note = [
         req.body.title,
         req.session.user.username,
@@ -243,8 +236,9 @@ app.post('/post',function(req, res){
                 return res.redirect('/post');
             }
             console.log('文章发表成功！');
-            return res.redirect('/');
             connection.release();
+            return res.redirect('/');
+
         });
         console.log(query.sql);
     });
