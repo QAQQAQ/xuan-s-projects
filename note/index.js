@@ -11,6 +11,81 @@ var session = require('express-session');
 var moment = require("moment");
 var checkLogin = require('./checkLogin.js');
 
+var Waterline = require('waterline');
+var mysqlAdapter = require('sails-mysql');
+var mongoAdapter = require('sails-mongo');
+
+var adapters = {
+  mongo: mongoAdapter,
+  mysql: mysqlAdapter,
+  default: 'mysql'
+};
+
+var connections = {
+  // mongo: {
+  //   adapter: 'mongo',
+  //   host: '123.206.71.158',
+  //   port: 27017,
+  //   user: 'mynote',
+  //   password: '123456',
+  //   database: 'mynote',
+  // },
+  mysql: {
+    adapter: 'mysql',
+    host: '123.206.71.158',
+    port: 3306,
+    user: 'mynote',
+    password: '123456',
+    database: 'mynote'
+  }
+};
+
+// 数据集合
+var User = Waterline.Collection.extend({
+  identity: 'user',
+  connection: 'mysql',
+  schema: true,
+  attributes: {
+    id: {
+      type: 'integer',
+      autoIncrement: true,
+      primaryKey: true
+    },
+    username: {
+      type: 'string',
+      // 校验器
+      required: true
+    },
+    password: {
+      type: 'string',
+    },
+    createTime: {
+      type: 'string'
+    }
+  }
+});
+
+var orm = new Waterline();
+
+// 加载数据集合
+orm.loadCollection(User);
+
+var config = {
+  adapters: adapters,
+  connections: connections
+};
+
+// orm.initialize(config, function(err, models){
+//   if(err) {
+//     console.error('orm initialize failed.', err);
+//     return;
+//   }
+//   console.log(models);
+//   // console.log('models:', models);
+//   // models.collections.user.create({username: 'Sid'}, function(err, user){
+//   //   console.log('after user.create, err, user:', err, user);
+//   // });
+// });
 ////引入mongoose
 //var mongoose = require('mongoose');
 //
@@ -33,6 +108,7 @@ var pool = mysql.createPool({
     password: '123456',
     database: 'mynote'
 });
+
 
 
 //创建express实例
