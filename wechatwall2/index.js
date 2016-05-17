@@ -12,7 +12,7 @@ function checkSignature(params,token){
     var key=[token,params.timestamp,params.nonce].sort().join('');
     var sha1=require('crypto').createHash('sha1');
     sha1.update(key);
-    System.out.println("params"+sha1.digest('hex'));
+    //System.out.println("params"+sha1.digest('hex'));
     return sha1.digest('hex')==params.signature;
 }
 
