@@ -1,7 +1,7 @@
 /**
  * Created by lenovo on 2016/5/17.
  */
-var myApp = angluar.module("myApp",[]);
+var myApp = angular.module("myApp",[]);
 myApp.factory('ioService', function ($rootScope) {
     var socket = io.connect('http://123.206.71.158:8062');
     console.log("connecting");

@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>WecChatWall</title>
+    <title>WechatWall</title>
     <link rel="stylesheet" type="text/css" herf="/bower_components/bootstrap/dist/css/bootstrap.css">
     <script type="text/javascript" src="/bower_components/socket.io.client/dist/socket.io-1.3.5.js" ></script>
     <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
@@ -23,7 +23,8 @@
 </head>
 <body ng-app="myApp">
 <div class="container" ng-controller="ShowMessage">
-    <input type="text" style="width: 200px;height: 40px; line-height: 40px" ng-model="message"> </input>
+    <input type="text" style="width: 200px;height: 40px; line-height: 40px" ng-model="message"placeholder="请输入文字"> </input>
+
     <a href="#" class="btn btn-primary btn-large" ng-click="submitInfo()" >提交</a>
     <div class="item" ng-repeat="message in messages track by $index">
         {{message}}
