@@ -26,7 +26,7 @@ io.sockets.on('connection',function(socket){
     });
 });
 
-var server=app.listen(3006,function(){
-    console.log("app is listen at port 3006");
+var server=app.listen(8060,function(){
+    console.log("app is listen at port 8060");
 });
 
