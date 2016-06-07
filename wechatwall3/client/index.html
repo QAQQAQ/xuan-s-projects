@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>my chatting room</title>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/assets/bower-components/angular/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="app" ng-controller="ctrl">
+    <input type="text" ng-model="msg" placeholder="请输入文字">
+    <button ng-click="toggle()">发送</button>
+
+    <ul>
+        <li ng-repeat="message in messages track by $index">
+            	<img src={{message.user.headimgurl}} width='80px' height='80px'/>
+            	{{message.user.nickname+'说：'+message.xml.Content[0]}}
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var app=angular.module('app',[]);
+    app.controller('ctrl',function($scope){
+        var Msgs=[];
+        var socket=io.connect('123.206.21.150:8060');
+        socket.emit('getAllMessages');
+        socket.on('connected',function(){
+           console.log("connect to my chatting room");
+        });
+        socket.on('newClient',function(socket){
+
+        });
+        socket.on('allMessages',function(messages){
+            Msgs=messages.slice();
+            $scope.$apply(function(){
+                $scope.messages=Msgs;
+            });
+        });
+        socket.on('newMessage',function(message){
+            Msgs.unshift(message);
+            $scope.$apply(function(){
+                $scope.messages=Msgs;
+            });
+        });
+        $scope.toggle=function(){
+            socket.emit('addMessage',$scope.msg);
+        };
+    });
+</script>
+</body>
+</html>
