@@ -3,16 +3,16 @@
  */
 var myApp = angular.module("myApp",[]);
 myApp.factory('ioService', function ($rootScope) {
-    var socket = io.connect('http://123.206.71.158:8062');
+    var socket = io.connect('http://123.206.71.158:8080');
     console.log("connecting");
     return {
         on: function (eventName, callback) {
-            //¼àÌýÊÂ¼þ
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
             socket.on(eventName, function () {
                 var args = arguments;
-                //µ÷ÓÃ»Øµ÷º¯Êý£¬²¢ÇÒ¸üÐÂÕû¸öÓ¦ÓÃ×´Ì¬
+                //ï¿½ï¿½ï¿½Ã»Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½×´Ì¬
                 $rootScope.$apply(function(){
-                    //Ä¬ÈÏÇé¿öÊÇ²»»á´¥·¢ÊÂ¼þÑ­»·µÄ
+                    //Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½á´¥ï¿½ï¿½ï¿½Â¼ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½
                     callback.apply(socket, args);
                 });
             })
