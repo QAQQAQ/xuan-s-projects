@@ -17,8 +17,8 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.use(cookieParser('rwrwport'));
 app.use(bodyParser.json());
 app.use(session({
-    resave:false,//添加这行
-    saveUninitialized: true,//添加这行
+    resave:false,
+    saveUninitialized: true,
     secret: 'rwreport',
     cookie:{
         maxAge: 1000*60*60*12
