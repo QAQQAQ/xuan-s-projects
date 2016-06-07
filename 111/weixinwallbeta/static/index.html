@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+	<meta charset="UTF-8">
+	<title>chat</title>
+	<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+	<!--奇怪此处不需要添加js -->
+	<script type="text/javascript" src="/bower_components/socket.io.client/dist/socket.io-1.3.5.js" ></script>
+	<!-- 添加bootstrap依赖 -->
+	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	 <!-- 添加angularjs依赖 -->
+    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+     <script type="text/javascript" src="/index.js"></script>
+     <style type="text/css">
+		.item{
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+		}
+     </style>
+</head>
+<body ng-app="myApp">
+	<div class="container" ng-controller="ShowMessage"> 
+		<input type="text" style="width: 200px;height: 40px; line-height: 40px" ng-model="message"> </input>
+	    <a href="#" class="btn btn-primary btn-large" ng-click="submitInfo()" >提交</a>
+		<div class="item" ng-repeat="message in messages track by $index">	
+	     {{message}}
+		</div>
+	</div>
+</body>
+</html>
