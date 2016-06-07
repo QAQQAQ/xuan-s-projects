@@ -6,6 +6,6 @@ module.exports = {
     appSecret:'39474f9f93c7a6c9f87109a1610573ad',
     webPort:8070,
     wxPort:8060,
-    sockPort:8080,
+    sockPort:8060,
     token:'millie'
-}
+};
