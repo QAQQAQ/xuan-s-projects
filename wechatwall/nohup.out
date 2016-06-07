@@ -1,0 +1,899 @@
+
+Running node-supervisor with
+  program 'index.'
+  --watch '.'
+  --extensions 'node,js'
+  --exec 'node'
+
+Starting child process with 'node index.'
+Watching directory '/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall' for changes.
+Press rs for restarting the process.
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+module.js:327
+    throw err;
+    ^
+
+Error: Cannot find module '/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall/index.'
+    at Function.Module._resolveFilename (module.js:325:15)
+    at Function.Module._load (module.js:276:25)
+    at Function.Module.runMain (module.js:441:10)
+    at startup (node.js:139:18)
+    at node.js:968:3
+
+Running node-supervisor with
+  program 'app.js'
+  --watch '.'
+  --extensions 'node,js'
+  --exec 'node'
+
+Starting child process with 'node app.js'
+Watching directory '/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall' for changes.
+Press rs for restarting the process.
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+Server has started. port:80
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EACCES 0.0.0.0:80
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1221:19)
+    at listen (net.js:1270:10)
+    at Server.listen (net.js:1366:5)
+    at Object.<anonymous> (/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall/app.js:16:40)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+    at Function.Module._load (module.js:300:12)
+
+Running node-supervisor with
+  program 'index.'
+  --watch '.'
+  --extensions 'node,js'
+  --exec 'node'
+
+Starting child process with 'node index.'
+Watching directory '/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall' for changes.
+Press rs for restarting the process.
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+module.js:327
+    throw err;
+    ^
+
+Error: Cannot find module '/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall/index.'
+    at Function.Module._resolveFilename (module.js:325:15)
+    at Function.Module._load (module.js:276:25)
+    at Function.Module.runMain (module.js:441:10)
+    at startup (node.js:139:18)
+    at node.js:968:3
+
+Running node-supervisor with
+  program 'index.js'
+  --watch '.'
+  --extensions 'node,js'
+  --exec 'node'
+
+Starting child process with 'node index.js'
+Watching directory '/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall' for changes.
+Press rs for restarting the process.
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+Socket server runing at port: 8071.
+Weixin server runing at port: 8070.
+
+Running node-supervisor with
+  program 'app.js'
+  --watch '.'
+  --extensions 'node,js'
+  --exec 'node'
+
+Starting child process with 'node app.js'
+Watching directory '/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall' for changes.
+Press rs for restarting the process.
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+Server has started. port:8000
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8snjZW9Ix7uohvOZis3fvKyc' ],
+     CreateTime: [ '1461640594' ],
+     MsgType: [ 'text' ],
+     Content: [ '乒乒乓乓' ],
+     MsgId: [ '6277698550140280033' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8snjZW9Ix7uohvOZis3fvKyc',
+     nickname: '张浩',
+     sex: 1,
+     language: 'zh_CN',
+     city: '海淀',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/zfQo34jpfXzGvJbFJtLsOJBwr1ksplaG6LxD8EzOJLmgxps1ib2WjfMFPKXibnniaqiccj2eUP32LjOWF2UKIjtqVMwawicibKVAYia/0',
+     subscribe_time: 1458910385,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640609' ],
+     MsgType: [ 'text' ],
+     Content: [ '哈哈哈' ],
+     MsgId: [ '6277698614564789479' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+new client connected.
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640621' ],
+     MsgType: [ 'text' ],
+     Content: [ '哦哦哦' ],
+     MsgId: [ '6277698666104397035' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+new client connected.
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640624' ],
+     MsgType: [ 'text' ],
+     Content: [ '哈哈哈哈' ],
+     MsgId: [ '6277698678989298926' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640626' ],
+     MsgType: [ 'text' ],
+     Content: [ '噢耶' ],
+     MsgId: [ '6277698687579233522' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640630' ],
+     MsgType: [ 'image' ],
+     PicUrl: [ 'http://mmbiz.qpic.cn/mmbiz/Jc5gxCmByKGM1dsnCgS8ibPxAya7Ma60zOuqfrJTnMOkJQKZRd3AlGdSnjiaicxlSHkbCAv2MD7328kR7JdDibzA0w/0' ],
+     MsgId: [ '6277698704759102710' ],
+     MediaId: [ 'wA1J_N5pky9HrKGmIClgvoEx02V3gbcar6mpBzKi8f7ULC2tTQfDCca8rDsBYs40' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640638' ],
+     MsgType: [ 'voice' ],
+     MediaId: [ 'zTpvhmiozRLUyGw96BNzEiXfYQ5xM1gPV5J0xbOQsxMxT3LQbhZnguvm4oKed_nb' ],
+     Format: [ 'amr' ],
+     MsgId: [ '6277698739118841086' ],
+     Recognition: [ '' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8snjZW9Ix7uohvOZis3fvKyc' ],
+     CreateTime: [ '1461640666' ],
+     MsgType: [ 'text' ],
+     Content: [ '赵二蛋' ],
+     MsgId: [ '6277698859377925381' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8snjZW9Ix7uohvOZis3fvKyc',
+     nickname: '张浩',
+     sex: 1,
+     language: 'zh_CN',
+     city: '海淀',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/zfQo34jpfXzGvJbFJtLsOJBwr1ksplaG6LxD8EzOJLmgxps1ib2WjfMFPKXibnniaqiccj2eUP32LjOWF2UKIjtqVMwawicibKVAYia/0',
+     subscribe_time: 1458910385,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640677' ],
+     MsgType: [ 'text' ],
+     Content: [ '张大傻' ],
+     MsgId: [ '6277698906622565641' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8snjZW9Ix7uohvOZis3fvKyc' ],
+     CreateTime: [ '1461640696' ],
+     MsgType: [ 'text' ],
+     Content: [ '/:,@-D/:,@-D/:,@-D' ],
+     MsgId: [ '6277698988226944272' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8snjZW9Ix7uohvOZis3fvKyc',
+     nickname: '张浩',
+     sex: 1,
+     language: 'zh_CN',
+     city: '海淀',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/zfQo34jpfXzGvJbFJtLsOJBwr1ksplaG6LxD8EzOJLmgxps1ib2WjfMFPKXibnniaqiccj2eUP32LjOWF2UKIjtqVMwawicibKVAYia/0',
+     subscribe_time: 1458910385,
+     remark: '',
+     groupid: 0 } }
+new client connected.
+new client closed.
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8snjZW9Ix7uohvOZis3fvKyc' ],
+     CreateTime: [ '1461640708' ],
+     MsgType: [ 'text' ],
+     Content: [ '表情识别不了' ],
+     MsgId: [ '6277699039766551827' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8snjZW9Ix7uohvOZis3fvKyc',
+     nickname: '张浩',
+     sex: 1,
+     language: 'zh_CN',
+     city: '海淀',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/zfQo34jpfXzGvJbFJtLsOJBwr1ksplaG6LxD8EzOJLmgxps1ib2WjfMFPKXibnniaqiccj2eUP32LjOWF2UKIjtqVMwawicibKVAYia/0',
+     subscribe_time: 1458910385,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640715' ],
+     MsgType: [ 'text' ],
+     Content: [ '【收到不支持的消息类型，暂无法显示】' ],
+     MsgId: [ '6277699069831322901' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8snjZW9Ix7uohvOZis3fvKyc' ],
+     CreateTime: [ '1461640717' ],
+     MsgType: [ 'text' ],
+     Content: [ '小傻' ],
+     MsgId: [ '6277699078421257498' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8snjZW9Ix7uohvOZis3fvKyc',
+     nickname: '张浩',
+     sex: 1,
+     language: 'zh_CN',
+     city: '海淀',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/zfQo34jpfXzGvJbFJtLsOJBwr1ksplaG6LxD8EzOJLmgxps1ib2WjfMFPKXibnniaqiccj2eUP32LjOWF2UKIjtqVMwawicibKVAYia/0',
+     subscribe_time: 1458910385,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640740' ],
+     MsgType: [ 'text' ],
+     Content: [ '表情动画显示不了' ],
+     MsgId: [ '6277699177205505315' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8snjZW9Ix7uohvOZis3fvKyc' ],
+     CreateTime: [ '1461640787' ],
+     MsgType: [ 'text' ],
+     Content: [ '是啊' ],
+     MsgId: [ '6277699379068968238' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8snjZW9Ix7uohvOZis3fvKyc',
+     nickname: '张浩',
+     sex: 1,
+     language: 'zh_CN',
+     city: '海淀',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/zfQo34jpfXzGvJbFJtLsOJBwr1ksplaG6LxD8EzOJLmgxps1ib2WjfMFPKXibnniaqiccj2eUP32LjOWF2UKIjtqVMwawicibKVAYia/0',
+     subscribe_time: 1458910385,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8snjZW9Ix7uohvOZis3fvKyc' ],
+     CreateTime: [ '1461640806' ],
+     MsgType: [ 'text' ],
+     Content: [ '去吃饭吧' ],
+     MsgId: [ '6277699460673346868' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8snjZW9Ix7uohvOZis3fvKyc',
+     nickname: '张浩',
+     sex: 1,
+     language: 'zh_CN',
+     city: '海淀',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/zfQo34jpfXzGvJbFJtLsOJBwr1ksplaG6LxD8EzOJLmgxps1ib2WjfMFPKXibnniaqiccj2eUP32LjOWF2UKIjtqVMwawicibKVAYia/0',
+     subscribe_time: 1458910385,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640821' ],
+     MsgType: [ 'text' ],
+     Content: [ '还没下课…' ],
+     MsgId: [ '6277699525097856334' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640832' ],
+     MsgType: [ 'text' ],
+     Content: [ '又要留项目' ],
+     MsgId: [ '6277699572342496601' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461640855' ],
+     MsgType: [ 'text' ],
+     Content: [ '一个大项目' ],
+     MsgId: [ '6277699671126744415' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+new client closed.
+new client closed.
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8snjZW9Ix7uohvOZis3fvKyc' ],
+     CreateTime: [ '1461641740' ],
+     MsgType: [ 'image' ],
+     PicUrl: [ 'http://mmbiz.qpic.cn/mmbiz/icpOpjqxCLBTmAvibPsoGsHlUOaoGEZLPDRTYOf8IaYf9IygTSMDOI6YXcf8cZL3NXvj5O0Ctp3fpgicHx3kpRsDw/0' ],
+     MsgId: [ '6277703472172801568' ],
+     MediaId: [ 'EBalP8cqbNHNalEfRW2oxf05v8y_T1mwk0MQsXmLy_XRds7h5N6dQKcOxz-PXHK2' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8snjZW9Ix7uohvOZis3fvKyc',
+     nickname: '张浩',
+     sex: 1,
+     language: 'zh_CN',
+     city: '海淀',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/zfQo34jpfXzGvJbFJtLsOJBwr1ksplaG6LxD8EzOJLmgxps1ib2WjfMFPKXibnniaqiccj2eUP32LjOWF2UKIjtqVMwawicibKVAYia/0',
+     subscribe_time: 1458910385,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461646559' ],
+     MsgType: [ 'text' ],
+     Content: [ '哈哈哈哈' ],
+     MsgId: [ '6277724169620202133' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461646563' ],
+     MsgType: [ 'text' ],
+     Content: [ '你好呀' ],
+     MsgId: [ '6277724186800071319' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461646571' ],
+     MsgType: [ 'text' ],
+     Content: [ '我是长颈鹿' ],
+     MsgId: [ '6277724221159809690' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461646576' ],
+     MsgType: [ 'text' ],
+     Content: [ '你是小白兔吗' ],
+     MsgId: [ '6277724242634646173' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1461660501' ],
+     MsgType: [ 'text' ],
+     Content: [ '/::P' ],
+     MsgId: [ '6277784050054246528' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0 } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1462364055' ],
+     MsgType: [ 'text' ],
+     Content: [ ' 睡睡睡' ],
+     MsgId: [ '6280805791475319681' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1462364183' ],
+     MsgType: [ 'text' ],
+     Content: [ '好好好' ],
+     MsgId: [ '6280806341231133589' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1462364228' ],
+     MsgType: [ 'text' ],
+     Content: [ '好好好' ],
+     MsgId: [ '6280806534504661916' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1462364275' ],
+     MsgType: [ 'text' ],
+     Content: [ '好好好' ],
+     MsgId: [ '6280806736368124847' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1462365083' ],
+     MsgType: [ 'text' ],
+     Content: [ '好好好' ],
+     MsgId: [ '6280810206701700133' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1462365086' ],
+     MsgType: [ 'text' ],
+     Content: [ '/::(' ],
+     MsgId: [ '6280810219586602027' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1462365089' ],
+     MsgType: [ 'text' ],
+     Content: [ '赵烜' ],
+     MsgId: [ '6280810232471503917' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1462365512' ],
+     MsgType: [ 'text' ],
+     Content: [ ' hhh' ],
+     MsgId: [ '6280812049242670200' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1462365957' ],
+     MsgType: [ 'text' ],
+     Content: [ ' hhhh' ],
+     MsgId: [ '6280813960503117015' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1462365961' ],
+     MsgType: [ 'text' ],
+     Content: [ '/::|/::|/::|' ],
+     MsgId: [ '6280813977682986201' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1462516373' ],
+     MsgType: [ 'text' ],
+     Content: [ '哈哈哈哈' ],
+     MsgId: [ '6281459992370910981' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }
+
+Running node-supervisor with
+  program 'index.js'
+  --watch '.'
+  --extensions 'node,js'
+  --exec 'node'
+
+Starting child process with 'node index.js'
+Watching directory '/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall' for changes.
+Press rs for restarting the process.
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+Socket server runing at port: 8071.
+Weixin server runing at port: 8070.
+{ xml: 
+   { ToUserName: [ 'gh_5f78fead4c9c' ],
+     FromUserName: [ 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE' ],
+     CreateTime: [ '1463450898' ],
+     MsgType: [ 'text' ],
+     Content: [ '/:!!!/:,@!/:,@!' ],
+     MsgId: [ '6285473746683433580' ] },
+  user: 
+   { subscribe: 1,
+     openid: 'oYAn8ssLwN1Rl5IdTw3ItxMqSaTE',
+     nickname: 'Millie',
+     sex: 2,
+     language: 'zh_CN',
+     city: '大兴',
+     province: '北京',
+     country: '中国',
+     headimgurl: 'http://wx.qlogo.cn/mmopen/gnK6ofEkAfYMfwVS8UiaUwDyhw31Q4bicqTCuQ9hFnLh75IPUAAfK7cvU8FggpXkcELz8C1vVH725TQS37oPKECEVQc1fYG2Yp/0',
+     subscribe_time: 1458903717,
+     remark: '',
+     groupid: 0,
+     tagid_list: [] } }

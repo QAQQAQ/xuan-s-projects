@@ -1,0 +1,33 @@
+
+Running node-supervisor with
+  program 'index.js'
+  --watch '.'
+  --extensions 'node,js'
+  --exec 'node'
+
+Starting child process with 'node index.js'
+Watching directory '/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall2' for changes.
+Press rs for restarting the process.
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+Server running at port8060.
+{ signature: '01163b32e954019c6f0c22730ccfcbfc67abb90c',
+  echostr: '6198475001800941561',
+  timestamp: '1463453473',
+  nonce: '2036069283' }
+token--> millie
+/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall2/index.js:15
+    System.out.println("params"+sha1.digest('hex'));
+    ^
+
+ReferenceError: System is not defined
+    at checkSignature (/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall2/index.js:15:5)
+    at Server.<anonymous> (/home/ubuntu/github/xuan-s-projects/xuan-s-projects/wechatwall2/index.js:26:8)
+    at emitTwo (events.js:87:13)
+    at Server.emit (events.js:172:7)
+    at HTTPParser.parserOnIncoming [as onIncoming] (_http_server.js:528:12)
+    at HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)
