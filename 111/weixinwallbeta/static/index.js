@@ -38,7 +38,7 @@ myApp.controller("ShowMessage",function($scope,ioService){
     });
     ioService.on('message',function(message){
          console.log(message);
-         $scope.messages.push(message);
+         $scope.messages.unshift(message);
     });
     $scope.submitInfo=function(){
         if($scope.message){
