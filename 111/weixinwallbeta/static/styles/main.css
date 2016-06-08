@@ -1,0 +1,16 @@
+.photo{
+  max-width: 50px;
+  display: inline-block;
+}
+.text{
+  width: 200px;
+  height: 35px;
+  line-height: 40px
+  margin-left:10px
+}
+.inline-block{
+  display:inline-block;
+}
+.content{
+  margin-bottom:10px;
+}
