@@ -54,7 +54,7 @@ function textMessage(result,response){
               //将消息通过websocket广播
               // io.messages.push(result.xml.Content[0]);
               // io.sockets.emit("message",result.xml.Content[0]);
-              io.messages.push(result);
+              io.messages.unshift(result);
               io.sockets.emit("message",result);
               var res = replyText(result, '消息发送成功！');
               response.end(res);

@@ -8,14 +8,13 @@ io.sockets.on('connection',function(socket){
 	socket.on('messages',function(){
 		socket.emit('messages',io.messages);
 	});
-	
+
 	socket.on('message',function(message){
 		//用户发来消息
-		io.messages.push(message);
+		io.messages.unshift(message);
 		console.log(message);
 		//socket.broadcast.emit('message',message);//客户端跟新消息
 		io.sockets.emit('message',message);//客户端跟新消息
 	});
 });
 module.exports=io;
-
