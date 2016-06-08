@@ -3,7 +3,7 @@
  */
 var myApp=angular.module("myApp",[]);
 myApp.factory('ioService',function($rootScope){
-var socket=io.connect('www.lmem.site:9903');
+var socket=io.connect('www.zhaoxuan.net.cn:9903');
     console.log("connect is istablish");
     return {
         //监听事
