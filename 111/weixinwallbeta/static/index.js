@@ -15,7 +15,7 @@ var socket=io.connect('www.zhaoxuan.net.cn:8080');
                 $rootScope.$apply(function(){ //默认情况是不会触发事件循环的
                     callback.apply(socket,args);
                 });
-            })
+            });
         },
         emit:function(eventName,data,callback){
             socket.emit(eventName,data,function(){
@@ -24,14 +24,14 @@ var socket=io.connect('www.zhaoxuan.net.cn:8080');
                     if(callback){
                         callback.apply(socket,args);
                     }
-                })
-            })
+                });
+            });
         }
-    }
-})
+    };
+});
 myApp.controller("ShowMessage",function($scope,ioService){
 
-    $scope.messages=[]
+    $scope.messages=[];
     ioService.emit('messages');
     ioService.on('messages',function(messages){
         $scope.messages=messages;
@@ -44,5 +44,5 @@ myApp.controller("ShowMessage",function($scope,ioService){
         if($scope.message){
             ioService.emit('message',$scope.message);
         }
-    }
+    };
 });

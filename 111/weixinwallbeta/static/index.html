@@ -22,12 +22,18 @@
      </style>
 </head>
 <body ng-app="myApp">
-	<div class="container" ng-controller="ShowMessage"> 
+	<div class="container" ng-controller="ShowMessage">
 		<input type="text" style="width: 200px;height: 40px; line-height: 40px" ng-model="message"> </input>
 	    <a href="#" class="btn btn-primary btn-large" ng-click="submitInfo()" >提交</a>
-		<div class="item" ng-repeat="message in messages track by $index">	
+		<div class="item" ng-repeat="message in messages track by $index">
 	     {{message}}
 		</div>
+    <ul>
+        <li ng-repeat="message in messages track by $index">
+            	<img src={{message.user.headimgurl}} width='80px' height='80px'/>
+            	{{message.user.nickname+'说：'+message.xml.Content[0]}}
+        </li>
+    </ul>
 	</div>
 </body>
 </html>

@@ -5,7 +5,7 @@ var config=require('../config');
 var checkSignature=require('./check');
 var io=require('../service/wxapp');
 var getUserInfo = require('./userInfo').getUserInfo;
-var replyText = require('./reply').replyText; 
+var replyText = require('./reply').replyText;
 
 
 var server = http.createServer(function (request, response) {
@@ -45,15 +45,17 @@ var server = http.createServer(function (request, response) {
 });
 function textMessage(result,response){
   //由openID获得用户信息
-
+  console.log('wechatMessage:', result);
   getUserInfo(result.xml.FromUserName[0])
             .then(function(userInfo){
+              console.log('userInfo: ', userInfo);
               //获得用户信息，合并到消息中
-              console.log("ddddddddddddddddddddddddd")
               result.user = userInfo;
               //将消息通过websocket广播
-              io.messages.push(result.xml.Content[0]);
-              io.sockets.emit("message",result.xml.Content[0]);
+              // io.messages.push(result.xml.Content[0]);
+              // io.sockets.emit("message",result.xml.Content[0]);
+              io.messages.push(result);
+              io.sockets.emit("message",result);
               var res = replyText(result, '消息发送成功！');
               response.end(res);
             });
