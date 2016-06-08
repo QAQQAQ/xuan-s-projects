@@ -16,18 +16,26 @@
 <body ng-app="myApp">
 	<div class="container" ng-controller="ShowMessage">
     <div style="margin-top:20px;margin-bottom:20px">
-      <input type="text" class="text" ng-model="message"> </input>
+      <input type="input" class="input" ng-model="message"> </input>
         <a href="#" class="btn btn-primary btn-large" ng-click="submitInfo()" >提交</a>
     </div>
     <ul class="list-unstyled">
         <li ng-repeat="message in messages track by $index" class="well well-sm content">
-          <div>
+          <div ng-if="message.user">
             <img src={{message.user.headimgurl}} class="img-responsive img-circle photo"/>
             <span>
               <h4 class="inline-block">{{message.user.nickname}}</h4>
               <small>({{message.user.province}})</small> :
             </span>
             <h3 class="text inline-block">{{message.xml.Content[0]}}</h3>
+          </div>
+          <div ng-if="!message.user">
+            <img src="images/bear.jpeg" class="img-responsive img-circle photo"/>
+            <span>
+              <h4 class="inline-block">臭熊</h4>
+              <small>(日本)</small> :
+            </span>
+            <h3 class="text inline-block">{{message}}</h3>
           </div>
         </li>
     </ul>

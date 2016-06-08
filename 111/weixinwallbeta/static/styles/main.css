@@ -3,9 +3,6 @@
   display: inline-block;
 }
 .text{
-  width: 200px;
-  height: 35px;
-  line-height: 40px
   margin-left:10px
 }
 .inline-block{
@@ -13,4 +10,9 @@
 }
 .content{
   margin-bottom:10px;
+}
+.input{
+  width: 200px;
+  height: 35px;
+  line-height: 40px
 }
