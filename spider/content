@@ -1,0 +1,43 @@
+//引入模块
+var http = require('http');
+var fs = require('fs');
+var cheerio = require('cheerio');
+var news = [];//保存解析html后的数据
+var linklist = require('./data/news');
+//console.log(linklist[0].link);
+//创建http get请求
+var section;
+for(var i = 0; i < 500; i++) {
+    linklist[i].link = encodeURI(linklist[i].link);
+    http.get(linklist[i].link, function (res) {
+        var html = '';//保存抓取到的html源
+        res.setEncoding('utf-8');
+        res.on('data', function (chunk) {
+            html += chunk;
+        });
+        res.on('end', function () {
+            var $ = cheerio.load(html);
+             $('.article-content p').each(function(index,item){
+                 section = $(this).text();
+                 if(section != ""){
+                     var space = section.substring(0,2).trim();
+                     if(space == ""){
+                         section = section+"\n";
+                         console.log(section);
+                         fs.appendFile('./data/content.json',section,'utf8',function(err){
+                             if(err)
+                             {
+                                 console.log(err);
+                             }
+                         });
+                     }
+                 }
+
+             })
+        });
+
+    }).on('error', function (err) {
+        console.log(err);
+    });
+}
+
