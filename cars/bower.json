@@ -1,0 +1,28 @@
+{
+  "name": "xuan-s-note",
+  "homepage": "https://github.com/hhhggg321/xuan-s-note",
+  "authors": [
+    "zhaoxuan"
+  ],
+  "description": "xuan-s-note",
+  "main": "index.js",
+  "moduleType": [],
+  "keywords": [
+    "note"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.3",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.2",
+    "animate": "git://github.com/daneden/animate.css.git#~3.4.0"
+  },
+  "directory": "public/bower_components"
+}
