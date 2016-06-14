@@ -60,6 +60,16 @@ app.get('/publish',function(req, res){
     res.render('publish.ejs');
 });
 
+app.get('/join',function(req, res){
+    console.log('加入行程');
+    res.render('join.ejs');
+});
+
+app.get('/myRoute',function(req, res){
+    console.log('查看行程');
+    res.render('myRoute.ejs');
+});
+
 app.get('/publish',function(req, res){
     console.log(req.session.user);
     pool.getConnection(function (err, connection) {
