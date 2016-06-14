@@ -1,0 +1,52 @@
+<%- include header %>
+    <script src='/app.js'></script>
+    <script src="/controllers/join.js"></script>
+
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-sm-2">
+                </div>
+                <div class="col-lg-8 col-sm-8">
+                    <div class="animated rotateInDownLeft col-lg-10 table" style="margin-top: 27%" ng-controller="JoinCtrl" ng-cloak>
+                        <div class="text-center page-title">选择加入行程</div>
+                        <div class="row">
+                          <div class="table-responsive">
+                  <table class="table table-bordered table-striped table-hover">
+
+                    <thead>
+                      <tr>
+                        <th>路线</th>
+                        <th>时间</th>
+                        <th>人数</th>
+                        <th>加入</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="item in dataList">
+                        <td>
+                          <span>{{item.route}}</span>
+                        </td>
+                        <td>
+                          <span>{{item.time}}</span>
+                        </td>
+                        <td>
+                          <span>{{item.personCount}}</span>
+                        </td>
+                        <td>
+                          <button>加入</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include footer %>
