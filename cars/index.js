@@ -44,14 +44,14 @@ app.use(express.static(path.join(__dirname,'scripts')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// //建立session模型
-//  app.use(session({
-//      secret: '1234',
-//      name: 'mynote',
-//      cookie: {maxAge: 1000 * 60 * 60 * 24 * 7},//session保存时间7天
-//      resave: true,
-//      saveUninitialized: true
-//  }));
+//建立session模型
+ // app.use(session({
+ //     secret: '1234',
+ //     name: 'mynote',
+ //     cookie: {maxAge: 1000 * 60 * 60 * 24 * 7},//session保存时间7天
+ //     resave: true,
+ //     saveUninitialized: true
+ // }));
 
 
 //发起约车
@@ -192,6 +192,6 @@ app.post('/login',function(req, res){
 });
 
 //监听3000端口
-app.listen(3000,function(req, res){
+app.listen(8888,function(req, res){
     console.log('app is running at port 8888');
 });
