@@ -193,5 +193,5 @@ app.post('/login',function(req, res){
 
 //监听3000端口
 app.listen(3000,function(req, res){
-    console.log('app is running at port 3000');
+    console.log('app is running at port 8888');
 });
